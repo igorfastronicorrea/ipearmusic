@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
-
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
 
@@ -46,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new SearchFragment(), "Search Music");
         adapter.addFragment(new SaveMusicFragment(), "Saved Musics");
-
         viewPager.setAdapter(adapter);
         viewPager.setOffscreenPageLimit(1);
     }
@@ -94,8 +92,6 @@ public class MainActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             return mFragmentTitleList.get(position);
         }
-
-
     }
 
 }
