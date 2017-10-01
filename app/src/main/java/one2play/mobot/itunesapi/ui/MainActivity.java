@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new SearchFragment(), "Search");
-        adapter.addFragment(new SaveMusicFragment(), "Save Musics");
+        adapter.addFragment(new SearchFragment(), "Search Music");
+        adapter.addFragment(new SaveMusicFragment(), "Saved Musics");
 
         viewPager.setAdapter(adapter);
         viewPager.setOffscreenPageLimit(1);
