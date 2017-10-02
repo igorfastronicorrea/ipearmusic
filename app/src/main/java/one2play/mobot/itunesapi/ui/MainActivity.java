@@ -23,9 +23,6 @@ import one2play.mobot.itunesapi.fragment.SearchFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText edtSearchMusic;
-    private Button btnSearchMusic;
-    private Button btnAllMusics;
     private TabLayout tabLayout;
     private ViewPager viewPager;
 
