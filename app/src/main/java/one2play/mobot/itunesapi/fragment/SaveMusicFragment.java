@@ -60,11 +60,12 @@ public class SaveMusicFragment extends Fragment {
 
         adapter = new MusicLikedAdapter(getContext(), musics);
         recyclerView.setAdapter(adapter);
+        txtNoResults = (TextView) v.findViewById(R.id.txtNoResults);
 
         if(musics.size() == 0){
-            txtNoResults = (TextView) v.findViewById(R.id.txtNoResults);
             txtNoResults.setVisibility(View.VISIBLE);
         }else{
+            txtNoResults.setVisibility(View.GONE);
             recyclerView.setVisibility(View.VISIBLE);
         }
 
@@ -82,10 +83,17 @@ public class SaveMusicFragment extends Fragment {
 
     private void updateList(){
         musics = db.allMusics();
+        if(musics.size() == 0){
+            txtNoResults.setVisibility(View.VISIBLE);
+        }else{
+            txtNoResults.setVisibility(View.GONE);
+            recyclerView.setVisibility(View.VISIBLE);
+        }
         adapter = new MusicLikedAdapter(getContext(), musics);
         recyclerView.setAdapter(adapter);
         mySwipeRefreshLayout.setRefreshing(false);
     }
+
     @Override
     public void onResume() {
         super.onResume();
